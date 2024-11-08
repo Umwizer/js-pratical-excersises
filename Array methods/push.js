@@ -2,3 +2,4 @@
 
 const fruits = ['banana','orange','apple','mango']
 console.log(fruits.push('kiwi'))
+//The push() method returns the new array length:
