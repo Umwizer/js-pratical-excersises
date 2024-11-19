@@ -2,7 +2,7 @@
 // array.copyWithin(target, start, end)
 
 let array = [1, 2, 3, 4, 5];
-array.copyWithin(0, 3);
+array.copyWithin(0, 2);
 console.log(array); 
 
 // With start and end
