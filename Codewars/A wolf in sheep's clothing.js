@@ -32,4 +32,22 @@ function warnTheSheep(queue) {
 // Example usage:
 console.log(warnTheSheep(["sheep", "sheep", "sheep", "wolf", "sheep"])); // "Oi! Sheep number 1! You are about to be eaten by a wolf!"
 console.log(warnTheSheep(["sheep", "sheep", "wolf"])); // "Pls go away and stop eating my sheep"
+// Explanation of the Code
+// Finding the Wolf:
+
+// const wolfIndex = queue.indexOf('wolf');
+// This line finds the index of the wolf in the array. If the wolf is at index 3 in the example ["sheep", "sheep", "sheep", "wolf", "sheep"], wolfIndex will be 3.
+// Checking Wolf's Position:
+// if (wolfIndex === queue.length - 1):
+// This checks if the wolf is at the last 
+// position in the array (the closest to you). If it is, we return the message indicating that the wolf should go away.
+// Calculating Sheep Position:
+
+// const sheepPosition = queue.length - wolfIndex - 1;
+// This calculates the position of the sheep in
+//  front of the wolf. Since arrays are zero-indexed and we want a 1-based position (where the first sheep in front of the wolf is number 1), we subtract the wolf's index from the total length of the array and subtract 1.
+// Returning the Warning Message:
+
+// The final return statement constructs the message for the sheep in front of the wolf using template literals.
+// This implementation efficiently checks the position of the wolf and returns the appropriate warning message based on its position relative to the sheep.
 
