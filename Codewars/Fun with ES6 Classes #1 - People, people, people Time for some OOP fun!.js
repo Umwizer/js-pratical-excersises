@@ -35,7 +35,7 @@ class Person {
     }
   }
   
-  const person2 = new Person("Ruth", "", 25, "Female");
+  const person2 = new Person("Ruth", "Doe", 25, "Female");
   console.log(person2.firstName);  // Expected: "Jane"
   console.log(person2.lastName);   // Expected: "Doe"
   console.log(person2.sayFullName())
