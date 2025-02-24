@@ -7,3 +7,19 @@
 // 3. Rejected : The operation failed and error reason is available
 
 
+const myPromise = new Promise((resolve, reject) => {
+    let success = true; // Simulating an operation
+    setTimeout(() => {
+        if (success) {
+            resolve("Operation Successful "); 
+        } else {
+            reject("Operation Failed "); 
+        }
+    }, 2000); // Simulates a delay of 2 seconds
+});
+myPromise
+    .then(result => console.log(result)) 
+    .catch(error => console.error(error)) 
+    .finally(() => console.log("Promise settled.")); // Runs regardless
+
+
