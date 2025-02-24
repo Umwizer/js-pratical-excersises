@@ -24,6 +24,13 @@
 // Win (x > y): 3 points
 // Loss (x < y): 0 points
 // Tie (x = y): 1 point
+// Step 2: Plan the Solution (Logic Building):
+// Steps to Solve:
+// Loop through all match results.
+// Extract scores from each result.
+// Compare scores to determine points.
+// Accumulate the points into a total.
+// Return the total points.
 
 function points(games){
 let totalPoints  = 0;
