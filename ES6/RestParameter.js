@@ -15,3 +15,8 @@ function sum1(...number){
     return numbers.reduce((total,num)=>total+num)
 }
 console.log(1,2,3,4)
+
+// **Difference:**
+
+// - **Spread (`...`)** expands values **out**
+// - **Rest (`...`)** collects values **in**
