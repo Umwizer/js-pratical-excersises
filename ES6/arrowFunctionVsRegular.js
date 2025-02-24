@@ -22,3 +22,21 @@ const obj2 = {
   
   obj2.greet(); // undefined
   
+//   When Arrow Functions Shine
+// One of the best use cases for arrow functions is inside setTimeout or when dealing with callbacks:
+
+javascript
+Copy
+Edit
+const obj3 = {
+  name: "Ruth",
+  greet: function () {
+    setTimeout(() => {
+      console.log(this.name);
+    }, 1000);
+  },
+};
+
+obj3.greet(); // "Ruth" (after 1 second)
+// 🔹 Here, the arrow function inherits this from greet(), which means this still refers to obj3.
+// 🔹 If we had used a regular function inside setTimeout, this would refer to window, breaking our code.
