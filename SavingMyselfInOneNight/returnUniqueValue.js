@@ -4,11 +4,13 @@
 //  and the values are the number of occurrences of that type in the input array.
 
 const countByType = (arr) => {
-    const result = {};
-    for (const {type} of arr){
-        result[type] = (result[type] || 0)+1;
-    }
-return result;
+    // const result = {};
+    // for (const {type} of arr){
+    //     result[type] = (result[type] || 0)+1;
+    // }
+    // return result;
+    const values = array.map(obj => obj.type)
+    return values.find(type => values.indexOf(type) == values.lastIndexOf(type))[0];
 }
 const items =[
     {type:'fruit'},
