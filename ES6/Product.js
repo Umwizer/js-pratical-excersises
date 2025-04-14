@@ -35,10 +35,12 @@ class Product {
     return `${this.name} costs $${this.price.toFixed(2)}`;
   }
   applyDiscount(discount) {
-    return this.price * (1 - discount / 100);
+    let discountAmount = (this.price * discount) / 100;
+    this.price = this.price - discountAmount;
+    return this.price;
   }
 }
 const laptop = new Product("Laptop", 1000);
 console.log(laptop.getDetails());
-console.log(laptop.getDetails(10));
+console.log(laptop.applyDiscount(10));
 console.log(laptop.getDetails());
