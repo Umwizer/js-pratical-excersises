@@ -26,3 +26,8 @@ function goToSleep() {
     console.log("Sleeping");
   }, 3000);
 }
+washHands(() => {
+  eatDinner(() => {
+    goToSleep();
+  });
+});
