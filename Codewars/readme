@@ -1,0 +1,90 @@
+kata:Get Localized Language
+
+Let's break down the task of implementing the `getLocalizedLanguageName` function step by step, with a focus on understanding what needs to be done and how to approach it:
+
+### Step 1: Understand the parameters
+
+You are given two parameters:
+
+1. **displayLocale**: This is a language code (e.g., `"en-US"` for American English, `"fr-FR"` for French in France) that indicates which locale you want to use to display the name of the language.
+
+2. **languageCode**: This is also a language code (e.g., `"en"`, `"fr"`, `"es"`) which represents the language whose name you want to get, but localized in the **displayLocale**.
+
+### Step 2: What you need to do
+
+The task is to return the name of the language (represented by `languageCode`) in the local format of the **displayLocale**.
+
+For example:
+
+- If `displayLocale = "en-US"` (English) and `languageCode = "fr"` (French), you should return `"French"` because that's how the language name is displayed in English.
+- If `displayLocale = "fr-FR"` (French) and `languageCode = "en"` (English), you should return `"Anglais"`, which is the French word for "English."
+
+### Step 3: How do we do it?
+
+To achieve this, we can utilize the **`Intl.DisplayNames`** object provided by JavaScript. This is a part of the Internationalization API and is specifically designed to help with tasks like this—displaying localized names for various types of things (languages, regions, etc.).
+
+Here's how you can approach the solution:
+
+1. **Create an instance of `Intl.DisplayNames`**: We will create a new `Intl.DisplayNames` object, passing the `displayLocale` and an option to display the name of a language.
+2. **Use the `of` method**: This method will be used to get the localized name of the language, given the `languageCode`.
+
+### Step 4: The Code Implementation
+
+```javascript
+function getLocalizedLanguageName(displayLocale, languageCode) {
+  // Create a new instance of Intl.DisplayNames for the given locale
+  const displayNames = new Intl.DisplayNames([displayLocale], {
+    type: "language",
+  });
+
+  // Use the `of` method to get the localized name of the language
+  return displayNames.of(languageCode);
+}
+```
+
+### Step 5: Example Walkthrough
+
+Let’s now explain how this code works using examples:
+
+#### Example 1:
+
+```javascript
+getLocalizedLanguageName("en-US", "fr");
+```
+
+- **displayLocale**: `'en-US'` (English, United States)
+- **languageCode**: `'fr'` (French)
+
+The `Intl.DisplayNames` object will display the language name in English (because the `displayLocale` is `'en-US'`), and for the code `'fr'`, it will return `"French"`, as that's how it's referred to in English.
+
+#### Example 2:
+
+```javascript
+getLocalizedLanguageName("fr-FR", "en");
+```
+
+- **displayLocale**: `'fr-FR'` (French, France)
+- **languageCode**: `'en'` (English)
+
+Here, the `Intl.DisplayNames` object will return `"Anglais"`, which is the French word for English.
+
+#### Example 3:
+
+```javascript
+getLocalizedLanguageName("de-DE", "es");
+```
+
+- **displayLocale**: `'de-DE'` (German, Germany)
+- **languageCode**: `'es'` (Spanish)
+
+This will return `"Spanisch"`, as that's how "Spanish" is referred to in German.
+
+### Key Points to Remember
+
+1. **ISO 639 Language Codes**: These are standardized codes that represent languages, such as `'en'` for English, `'fr'` for French, etc.
+2. **`Intl.DisplayNames`**: This is the key to solving the problem. It takes in a locale and a type (like "language" in this case) and can return localized names for languages, regions, and scripts.
+3. **Localization**: Based on the locale you provide (like `'en-US'`), the name of the language (like `'fr'` for French) is returned in the correct local language format.
+
+---
+
+I hope this step-by-step breakdown makes sense! Let me know if you have any questions or need further clarification.

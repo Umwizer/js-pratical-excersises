@@ -20,3 +20,10 @@
 // getLocalizedLanguageName('fr', 'ja'); // should return "japonais"
 // getLocalizedLanguageName('pt', 'it'); // should return "italiano"
 // getLocalizedLanguageName('zh', 'ar'); // should return "阿拉伯语"
+
+function getLocalizedLanguageName(displayLocale, languageCode) {
+  const displayNames = new Intl.DisplayNames([displayLocale], {
+    type: "language",
+  });
+  return displayNames.of(languageCode);
+}
