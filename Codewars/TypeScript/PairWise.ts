@@ -9,3 +9,13 @@
 // Your task is to write a function that takes a list of citizen numbers and returns the sum of all absolute differences between every pair of numbers.
 
 // Good luck discovering the secret to Numeria’s harmony!
+
+export function totalPairwiseAbsoluteDifference(arr: number[]): number {
+  arr.sort((a, b) => a - b);
+  const n = arr.length;
+  let total = 0;
+  for (let i = 0; i < n; i++) {
+    total += arr[i] * (2 * i - (n - 1));
+  }
+  return total;
+}
