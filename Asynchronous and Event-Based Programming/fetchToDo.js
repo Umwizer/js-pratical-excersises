@@ -7,7 +7,7 @@
 // Upon receiving a successful response, it should log the fetched
 // data to the console. If there's an error, it should catch the error
 //  and log an appropriate message.
-
+const XMLHttpRequest = require("xhr2");
 function fetchToDo(XMLHttpRequest) {
   return new Promise((resolve, reject) => {
     const xhr = new XMLHttpRequest();
