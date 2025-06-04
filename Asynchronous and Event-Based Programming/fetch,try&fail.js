@@ -26,3 +26,21 @@ async function fetchWithRetry(url, maxRetries = 3) {
 fetchWithRetry("https //training.digital skills fdn.org", 3)
   .then((data) => console.log("Fetched data:", data))
   .catch((error) => console.error("Failed after retries:", error.message));
+
+//
+
+async function fetchDat(url) {
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`HTTP error: ${response.status}`);
+    }
+    const data = await response.json();
+    console.log("Data fetched:", data);
+  } catch (error) {
+    console.error("Fetch failed:", error.message);
+  }
+}
+fetchDat("https:/api/models/login")
+  .then((message) => console.log(message))
+  .catch((err) => console.error(err));
