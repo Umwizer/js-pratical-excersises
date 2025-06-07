@@ -17,7 +17,7 @@ xhr.onerror = () => {
 };
 xhr.send();
 
-// makeXHRRequest("https://jsonplaceholder.typicode.com/posts/1")
-//   .then((data) => console.log("Xml request worked perfectly"))
-//   .catch((error) => console.error("Promise error:", error))
-//   .finally(() => console.log("Promise finished"));
+makeXHRRequest("https://jsonplaceholder.typicode.com/posts/1")
+  .then((data) => console.log("Xml request worked perfectly"))
+  .catch((error) => console.error("Promise error:", error))
+  .finally(() => console.log("Promise finished"));
