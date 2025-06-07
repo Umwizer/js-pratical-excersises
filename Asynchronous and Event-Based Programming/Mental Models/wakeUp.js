@@ -20,8 +20,26 @@
 
 function createAlarm(name, delayedTime) {
   return new Promise((resolve, reject) => {
-    if (delayedTime < 2000) {
+    if (delayedTime < 2) {
       reject("delayed is not sufficient");
+    } else {
+      setTimeout(() => {
+        resolve(`wake up ${name}`);
+      });
     }
   });
 }
+createAlarm("Ruth", 1)
+  .then((message) => {
+    console.log(message);
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+createAlarm("Murerwa", 3)
+  .then((message) => {
+    console.log(message);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
