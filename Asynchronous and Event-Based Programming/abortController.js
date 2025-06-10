@@ -10,22 +10,22 @@ async function fetchWithTimeout(urls, timeoutMs) {
   }, timeoutMs);
   try {
     const response = await fetch(urls, { signal: controller.signal });
-    clearTimeout(timeoutId);
+    clearImmediate(timeoutId);
     if (!response.ok) {
-      throw new Error(`https request status is incorrect ${urls}`);
+      throw new Error(`https request error,${response}`);
     }
     const data = await response.json();
     return data;
   } catch (error) {
-    if (error.name === "AbortError") {
-      console.error(`Fetch request time error`);
+    if (error.name == "Abort Error") {
+      console.log("Fetch error");
     } else {
       console.log(error.message);
     }
     throw error;
   }
 }
-fetchWithTimeout("https://jsonplaceholder.typicode.com/users", 50)
+fetchWithTimeout("https://jsonplaceholder.typicode.com/users", 5)
   .then((data) => {
     console.log(data);
   })
