@@ -19,3 +19,5 @@ async function fetchWithhTimeout(url) {
   }
 }
 fetchWithhTimeout("https://jsonplaceholder.typicode.com/todos/1");
+
+async function fetchWithTimeout(url) {}

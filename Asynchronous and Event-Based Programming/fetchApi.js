@@ -26,21 +26,7 @@ async function getFastPosts() {
     //"https://this-may-not-exist.com/posts",
     "https://jsonplaceholder.typicode.com/posts",
   ];
-  const fetchedPromise = urls.map((url) =>
-    fetch(url).then((response) => {
-      if (!response.ok) {
-        throw new Error(`Https request incorrect  ${url}`);
-      }
-      return response.json();
-    })
-  );
-  try {
-    const fastData = await Promise.race(fetchedPromise);
-    console.log(fastData);
-  } catch (error) {
-    console.error(error);
-    // return null;
-  }
+  const fetchedPromise = urls.map((urls) => fetch(urls).then((response) => {}));
 }
 getFastPosts()
   .then((posts) => {

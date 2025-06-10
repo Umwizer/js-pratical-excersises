@@ -7,11 +7,13 @@
 
 function createAlarm(name, delayedTime) {
   return new Promise((resolve, reject) => {
-    if (delayedTime < 2) reject("Delay is not sufficient");
-    else
+    if (delayedTime < 2) {
+      reject("Delay is not sufficient");
+    } else {
       setTimeout(() => {
         resolve(`Wake Up ${name}`);
       }, delayedTime * 1000);
+    }
   });
 }
 createAlarm("Ruth", 4)

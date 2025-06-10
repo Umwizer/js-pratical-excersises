@@ -15,7 +15,7 @@
 //     }
 //   });
 
-async function fetchD(callback) {
+async function fetchD() {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       const data = "data successfully";
