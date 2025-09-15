@@ -6,13 +6,19 @@ const fs = require("fs");
 //take to argument the first one is string and it's relative path to the file we want to read
 //
 fs.readFile("./docs/blog1.txt", (error, data) => {
-  if (err) {
-    console.log(err);
+  if (error) {
+    console.log(error);
   }
-  console.log(data);
+  console.log(data.toString());
 });
+console.log("last line");
 //writing files
-
+fs.writeFile("./docs/blog1.txt", "hello,world", () => {
+  console.log("file was written");
+});
+fs.writeFile("./docs/blog1.txt", "hello,again", () => {
+  console.log("file was written");
+});
 //directories
 
 //deleting files
